@@ -327,7 +327,7 @@ function gvHires(){
     if (img.getAttribute('data-hi-done') || !img.naturalWidth) return;
     var r = img.getBoundingClientRect(); if (!r.width) return;
     var need = Math.max(r.width, r.height * img.naturalWidth / img.naturalHeight) * dpr;
-    if (need <= img.naturalWidth * 1.1) return;
+    if (need <= img.naturalWidth) return;
     img.setAttribute('data-hi-done', '1');
     var p = new Image(); p.onload = function(){ img.src = p.src; }; p.src = img.getAttribute('data-hi');
   });

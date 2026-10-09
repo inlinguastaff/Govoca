@@ -121,6 +121,15 @@ body > div > section:first-of-type > h1{font-size:56px!important}
 #contact > :nth-child(3){grid-column:2;grid-row:1 / 6;max-width:none}
 #contact > :nth-child(7){grid-column:1 / -1}
 }
+/* ---------- v7: very large monitors and TVs: scale the whole page up so it doesn't look small ---------- */
+@media (min-width:1800px){
+body > div{zoom:1.25}
+body > div > section:first-of-type{min-height:max(560px,calc((100vh - 90px) / 1.25))}
+}
+@media (min-width:2400px){
+body > div{zoom:1.6}
+body > div > section:first-of-type{min-height:max(560px,calc((100vh - 115px) / 1.6))}
+}
 #gv-tiles[data-collapsed] > :nth-child(n+3){display:none!important}
 #teachers[data-collapsed] > div:nth-child(2) img{display:none!important}
 #teachers[data-collapsed] > :nth-child(n+3):not(.gv-more){display:none!important}

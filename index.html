@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GoVoca landing page v6 (Japanese first, EN/JP switch)</title>
-<!-- Exported from the claude.ai landing page mockup (https://claude.ai/artifact/JQr8upRwx4v3JPUB7R1dVk) for review. Fixed 390 px mobile mockup, images embedded. Not yet the final responsive page. -->
+<title>GoVoca landing page v7 (Japanese first, EN/JP switch)</title>
+<!-- Landing page source (English). From v7 it adapts to phones, tablets and laptops; built into the bilingual page with tools/make_landing_bilingual.ps1. Images embedded. -->
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&amp;family=Quicksand:wght@500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;700&amp;display=swap">
 <style>
@@ -22,6 +22,105 @@ a{color:#4A787D}a:hover{color:#2D4654}
 .gv-about p{margin:0}.gv-about p+p{margin-top:10px}
 .gv-about .ph{color:#737A80;font-style:italic}
 mark.gv-review{background:#FFE796;color:#2D4654;padding:1px 0;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* ---------- v7: tablets and up (768 px+): full-width colour bands, bigger type, wider grids ---------- */
+@media (min-width:768px){
+body > div{max-width:none!important}
+body > div > header{height:72px!important;padding:0 max(40px,calc((100% - 1160px)/2))!important}
+body > div > header img{height:38px!important}
+body > div > header > div:first-child span:first-child{font-size:26px!important}
+body > div > header > div:first-child span:last-child{font-size:12px!important}
+body > div > section{padding:64px max(40px,calc((100% - 1160px)/2))!important;gap:22px!important}
+.h2{font-size:32px}
+.lead{font-size:17px}
+.t{font-size:16px}
+.d{font-size:14px}
+.chip{font-size:14px;padding:7px 14px}
+.gv-about{max-height:230px;font-size:15px;padding:18px 20px}
+.gv-more{display:none!important}
+/* first screen */
+body > div > section:first-of-type{padding-top:48px!important;padding-bottom:56px!important;gap:16px!important}
+body > div > section:first-of-type > p:first-child{font-size:15px!important}
+body > div > section:first-of-type > h1{font-size:44px!important}
+body > div > section:first-of-type > p:nth-child(3){font-size:17px!important}
+body > div > section:first-of-type > img{height:380px!important}
+body > div > section:first-of-type > div{max-width:480px}
+body > div > section:first-of-type > div a{min-height:56px!important;font-size:17px!important}
+/* app */
+#govoca > div:nth-child(5){grid-template-columns:repeat(4,minmax(0,1fr))!important}
+#gv-tiles{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px 18px!important}
+.tile,.wr{height:230px}
+.wr{padding:12px;gap:5px}.wr .tab{font-size:12px}.wr .lab{font-size:10px}.wr .box{font-size:13px}
+.rp span{font-size:12px}
+/* course */
+#teachers > div:nth-child(2){display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}
+#teachers > div:nth-child(2) img{height:180px!important}
+#teachers > div:nth-child(4){max-width:760px}
+/* EduTours */
+#edutours > div:nth-child(5) > img:first-child{height:340px!important}
+#edutours > div:nth-child(5) > img:not(:first-child){height:140px!important}
+#edutours > div:nth-child(6) > p:first-child{font-size:17px!important}
+/* journey */
+#journey > div:nth-child(2){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px 28px!important}
+#journey > div:nth-child(2) img{width:96px!important;height:96px!important}
+#journey > div:nth-child(2) p:first-child{font-size:13px!important}
+#journey > div:nth-child(2) p:last-child{font-size:18px!important}
+/* contact */
+#contact > p:nth-child(2){font-size:17px!important}
+#trial{max-width:640px}
+}
+/* ---------- v7: iPad landscape, laptops, monitors (1024 px+): two-column sections ---------- */
+@media (min-width:1024px){
+body > div > section{padding-top:80px!important;padding-bottom:80px!important}
+.h2{font-size:36px}
+/* first screen fills the screen: text left, photo right */
+body > div > section:first-of-type{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:18px 56px!important;align-content:center;min-height:max(560px,calc(100vh - 72px));box-sizing:border-box}
+body > div > section:first-of-type > :nth-child(1){grid-column:1;grid-row:1;align-self:end}
+body > div > section:first-of-type > :nth-child(2){grid-column:1;grid-row:2}
+body > div > section:first-of-type > :nth-child(3){grid-column:1;grid-row:3}
+body > div > section:first-of-type > :nth-child(5){grid-column:1;grid-row:4;align-self:start;margin-top:10px}
+body > div > section:first-of-type > :nth-child(4){grid-column:2;grid-row:1 / 5;align-self:stretch;height:auto!important;min-height:460px;margin-top:0!important}
+body > div > section:first-of-type > h1{font-size:56px!important}
+/* app: text and features left, video right; activities full width below */
+#govoca{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto 1fr;gap:20px 48px!important}
+#govoca > :nth-child(1){grid-column:1;grid-row:1}
+#govoca > :nth-child(2){grid-column:1;grid-row:2}
+#govoca > :nth-child(3){grid-column:1;grid-row:3;align-self:start}
+#govoca > :nth-child(4){grid-column:2;grid-row:1 / 4;align-self:start}
+#govoca > :nth-child(n+5){grid-column:1 / -1}
+#govoca > :nth-child(5){margin-top:12px}
+.tile,.wr{height:250px}
+/* course: cards full width, chart left, teacher tools right */
+#teachers{display:grid!important;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:22px 48px!important}
+#teachers > :nth-child(-n+3),#teachers > :nth-child(6){grid-column:1 / -1}
+#teachers > :nth-child(4){grid-column:1;max-width:none}
+#teachers > :nth-child(5){grid-column:2;align-self:start;flex-direction:column;align-items:flex-start}
+#teachers > :nth-child(5) .chip{font-size:16px;padding:10px 16px}
+/* EduTours: text left, photos and quote right */
+#edutours{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 56px!important;align-items:start}
+#edutours > :nth-child(1){grid-column:1;grid-row:1}
+#edutours > :nth-child(2){grid-column:1;grid-row:2}
+#edutours > :nth-child(3){grid-column:1;grid-row:3}
+#edutours > :nth-child(4){grid-column:1;grid-row:4}
+#edutours > :nth-child(7){grid-column:1;grid-row:5}
+#edutours > :nth-child(8){grid-column:1;grid-row:6}
+#edutours > :nth-child(9){grid-column:1;grid-row:7}
+#edutours > :nth-child(10){grid-column:1;grid-row:8}
+#edutours > :nth-child(5){grid-column:2;grid-row:1 / 5}
+#edutours > :nth-child(6){grid-column:2;grid-row:5 / 9}
+#edutours > div:nth-child(5) > img:first-child{height:320px!important}
+/* journey: four steps across */
+#journey > div:nth-child(2){grid-template-columns:repeat(4,minmax(0,1fr))!important}
+#journey > div:nth-child(2) > div{flex-direction:column!important;align-items:flex-start!important}
+#journey > div:nth-child(2) img{width:100%!important;height:170px!important}
+/* contact: intro left, form right, footer full width */
+#contact{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 56px!important;align-items:start}
+#contact > :nth-child(1){grid-column:1;grid-row:1}
+#contact > :nth-child(2){grid-column:1;grid-row:2}
+#contact > :nth-child(5){grid-column:1;grid-row:3;margin-top:28px!important}
+#contact > :nth-child(6){grid-column:1;grid-row:4}
+#contact > :nth-child(3){grid-column:2;grid-row:1 / 6;max-width:none}
+#contact > :nth-child(7){grid-column:1 / -1}
+}
 #gv-tiles[data-collapsed] > :nth-child(n+3){display:none!important}
 #teachers[data-collapsed] > div:nth-child(2) img{display:none!important}
 #teachers[data-collapsed] > :nth-child(n+3):not(.gv-more){display:none!important}
@@ -204,6 +303,10 @@ function gvMore(b){
   if (open) t.removeAttribute('data-collapsed'); else t.setAttribute('data-collapsed', '');
   b.setAttribute('aria-expanded', open ? 'true' : 'false');
   if (!open) t.scrollIntoView({block: 'start'});
+}
+if (window.matchMedia && matchMedia('(min-width: 768px)').matches) {
+  ['gv-tiles', 'teachers'].forEach(function(id){ var el = document.getElementById(id); if (el) el.removeAttribute('data-collapsed'); });
+  [].forEach.call(document.querySelectorAll('.gv-more'), function(b){ b.setAttribute('aria-expanded', 'true'); });
 }
 </script>
 <script>

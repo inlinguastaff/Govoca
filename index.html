@@ -336,6 +336,25 @@ window.addEventListener('load', gvHires);
 var gvHiresT; window.addEventListener('resize', function(){ clearTimeout(gvHiresT); gvHiresT = setTimeout(gvHires, 300); });
 </script>
 <script>
+(function(){
+  var src = new URLSearchParams(location.search).get('src') || 'direct';
+  function track(name){
+    try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: 'src=' + src, event: true }); } catch (e) {}
+  }
+  document.addEventListener('submit', function(e){ if (e.target && e.target.id === 'trial') track('trial-form-send'); }, true);
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('mailto:') === 0) track('email-direct-click');
+    else if (href === '#trial') track('free-trial-button');
+    else if (href === '#edutours') track('edutours-button');
+    else if (href.indexOf('youtube.com') > -1) track('youtube-open');
+  }, true);
+  document.addEventListener('click', function(e){ var b = e.target.closest && e.target.closest('button.yt'); if (b) track('video-play'); }, true);
+})();
+</script>
+<script>
 window.GV_I18N = {
   "_about": "Japanese text for the landing page (v4 onwards). Key = the English text exactly as on the page; value = Japanese. Draft by Claude on 6 Oct 2026, to be checked by a native speaker. Items marked review in the review sheet need particular care.",
   "text": {
